@@ -14,6 +14,9 @@ const cheerio = require("cheerio");
 const { File } = require("megajs");
 const PREFIX = config.PREFIX;
 const SESSION_DIR = "./sessions";
+if (!existsSync(SESSION_DIR)) {
+  mkdirSync(SESSION_DIR);
+}
 if (!fs.existsSync(__dirname + "/sessions/creds.json")) {
 if(!config.SESSION_ID) return console.log("Please add your session to SESSION_ID env !!");
 const sessdata = config.SESSION_ID;
