@@ -11,8 +11,7 @@ const pino = require("pino");
 const config = require("./config");
 const axios = require("axios");
 const cheerio = require("cheerio");
-const { File } = require("megajs")
-const commands = new Map();
+const { File } = require("megajs");
 const PREFIX = config.PREFIX;
 const SESSION_DIR = "./sessions";
 if (!fs.existsSync(__dirname + "/sessions/creds.json")) {
