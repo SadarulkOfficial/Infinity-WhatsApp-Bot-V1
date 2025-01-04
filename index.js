@@ -65,6 +65,7 @@ const connectToWhatsApp = async () => {
       const args = messageContent.trim().split(/ +/).slice(1);
       const q = args.join(" ");
       const jid = m.key.remoteJid;
+      const typing = sock.sendPresenceUpdate("composing", jid);
       switch (command) {
         case "ai":
           try {
@@ -81,7 +82,7 @@ const connectToWhatsApp = async () => {
               });
               return;
             }
-            await sock.sendPresenceUpdate("composing", jid);
+            await typing;
             const model = genAI.getGenerativeModel({ model: "gemini-pro" });
             const generationConfig = {
               temperature: 0.7,
