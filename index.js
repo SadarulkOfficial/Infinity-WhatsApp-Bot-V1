@@ -34,7 +34,6 @@ async function connectToWhatsApp() {
     printQRInTerminal: false,
     auth: state,
     logger: pino({ level: "silent" }),
-    browser: Browsers.macOS("Chrome"),
     maxFileSize: config.MAX_SIZE * 1024 * 1024,
   });
   sock.ev.on("connection.update", (update) => {
