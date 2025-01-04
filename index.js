@@ -17,7 +17,6 @@ const SESSION_DIR = "./sessions";
 if (!existsSync(SESSION_DIR)) {
   mkdirSync(SESSION_DIR);
 }
-
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 8000;
