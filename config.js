@@ -1,6 +1,5 @@
 module.exports = {
   BOT_NUMBER: "94771709545",
-  SESSION_ID: "66xVSA5D#ihuU9ys0ja1iSowMwqCYSouLO6kG4z0TYZwZne-t2Zg",
   PREFIX: ".",
   GOOGLE_API_KEY: "AIzaSyDpCGEwnXmyVURfMCKSA245bNsS2NFewB8",
   MAX_SIZE: "100", //100MB
