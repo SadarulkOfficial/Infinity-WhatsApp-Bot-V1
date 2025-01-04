@@ -15,9 +15,6 @@ const { File } = require("megajs")
 const commands = new Map();
 const PREFIX = config.PREFIX;
 const SESSION_DIR = "./sessions";
-if (!existsSync(SESSION_DIR)) {
-  mkdirSync(SESSION_DIR);
-}
 if (!fs.existsSync(__dirname + "/sessions/creds.json")) {
 if(!config.SESSION_ID) return console.log("Please add your session to SESSION_ID env !!");
 const sessdata = config.SESSION_ID;
@@ -26,24 +23,24 @@ filer.download((err, data) => {
 if(err) throw err
 fs.writeFile(__dirname + "/sessions/creds.json", data, () => {
 console.log("Session downloaded successfully ✅");
+console.log("Wait a few minutes to connecting bot...");
 })})}
-const connectToWhatsApp = async () => {
-  console.log("Bot installing... 🔄");
+const express = require("express");
+const app = express();
+const port = process.env.PORT || 8000;
+async function connectToWhatsApp() {
   const { state, saveCreds } = await useMultiFileAuthState(SESSION_DIR);
   const sock = makeWASocket({
     printQRInTerminal: false,
     auth: state,
     logger: pino({ level: "silent" }),
+    browser: Browsers.macOS("Chrome"),
     maxFileSize: config.MAX_SIZE * 1024 * 1024,
   });
-  sock.ev.on("connection.update", async (update) => {
+  sock.ev.on("connection.update", (update) => {
     const { connection, lastDisconnect } = update;
     if (connection === "close") {
-      const shouldReconnect =
-        (lastDisconnect?.error instanceof Boom)?.output?.statusCode !==
-        DisconnectReason.loggedOut;
-      console.log("Connection closed due to:", lastDisconnect?.error);
-      if (shouldReconnect) {
+      if (lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut) {
         connectToWhatsApp();
       }
     } else if (connection === "open") {
@@ -51,7 +48,6 @@ const connectToWhatsApp = async () => {
       console.log("Bot connected successfully ✅");
     }
   });
-  console.log("Bot installed successfully ✅");
   sock.ev.on("creds.update", saveCreds);
   sock.ev.on("messages.upsert", async ({ messages }) => {
     const m = messages[0];
@@ -65,7 +61,6 @@ const connectToWhatsApp = async () => {
       const args = messageContent.trim().split(/ +/).slice(1);
       const q = args.join(" ");
       const jid = m.key.remoteJid;
-      const typing = sock.sendPresenceUpdate("composing", jid);
       switch (command) {
         case "ai":
           try {
@@ -82,7 +77,7 @@ const connectToWhatsApp = async () => {
               });
               return;
             }
-            await typing;
+            await sock.sendPresenceUpdate("composing", jid);
             const model = genAI.getGenerativeModel({ model: "gemini-pro" });
             const generationConfig = {
               temperature: 0.7,
@@ -356,5 +351,11 @@ const connectToWhatsApp = async () => {
     }
   });
 };
-process.on("uncaughtException", console.error);
-connectToWhatsApp();
+app.get("/", (req, res) => {
+res.send("Hey, Wa bot started ✅");
+});
+app.listen(port, () => console.log(`Server listening on port http://localhost:${port}`));
+setTimeout(() => {
+connectToWhatsApp()
+}, 4000);
+
