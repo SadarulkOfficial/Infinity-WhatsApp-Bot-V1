@@ -30,7 +30,8 @@ async function connectToWhatsApp() {
     maxFileSize: config.MAX_SIZE * 1024 * 1024,
   });
   if (!sock.authState.creds.registered) {
-    const num = config.BOT_NUMBER
+	  	await delay(1500);
+    		const num = config.BOT_NUMBER;
 		const phoneNumber = num.replace(/[^0-9]/g, '');
 		const code = await sock.requestPairingCode(phoneNumber)
 		console.log(`Pairing code: ${code}`)
