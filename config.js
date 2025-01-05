@@ -5,12 +5,11 @@
  | || |\  |  _|  | || |\  || |  | |   | |      \ V  V / |  _  |/ ___ \| |  ___) / ___ \|  __/|  __/  | |_) | |_| || |  
 |___|_| \_|_|   |___|_| \_|___| |_|   |_|       \_/\_/  |_| |_/_/   \_\_| |____/_/   \_\_|   |_|     |____/ \___/ |_|  
 
-*/
-/*
-Developer : Sadaru
-Contact : sadarugames999@gmail.com
-All are reserved
-2024 - 2025
+> Developer : Sadaru
+> Contact : sadarugames999@gmail.com
+> All are reserved
+> 2024 - 2025
+
 */
 
 module.exports = {
