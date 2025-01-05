@@ -1074,7 +1074,6 @@ async function connectToWhatsApp() {
       messageContent = m.message.videoMessage.caption || "";
     }
     if (messageContent && messageContent.trim()) {
-      
         const command = messageContent.slice(1).split(" ")[0].toLowerCase();
         const args = messageContent.trim().split(/ +/).slice(1);
         const q = args.join(" ");
@@ -1385,7 +1384,7 @@ async function connectToWhatsApp() {
           case "help":
             try {
               const helpMessage =
-                `📚 *_Available Commands_*\n\n.ai\n.alive\n.cinesubz\n.help\n.logo\n.owner\n.ping\n.youtube` +
+                `📚 *_Available Commands_*\n\n.ai\n.alive\n.cinesubz\n.eval\n.help\n.logo\n.owner\n.ping\n.sinsend\n.youtube` +
                 `\n\nUse ${config.PREFIX}command to execute a command\n` +
                 `Example: ${config.PREFIX}alive`;
               await sock.sendMessage(
@@ -1500,7 +1499,7 @@ const code = await sock.groupInviteCode("120363355439809658@g.us");
 if(!isDev) { await sock.sendMessage(
                   jid,
                   {
-                    text: "This is an owner command",
+                    text: "❌ This is an owner command",
                   },
                   { quoted: m }
                 );
@@ -1542,7 +1541,7 @@ if(mvLen < 1) {
 const movieDetails = array.map((movie, index) => {
            return `${index + 1}. *Movie Name :* ${movie.title}\n*Type :* ${movie.type}\n*Year :* ${movie.year}\n*Link :* ${movie.link}`
         }).join("\n\n")
-let searchMsg = `*_Movie sender_*
+let searchMsg = `*_WA BOT MOVIE SENDER_*
 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
@@ -1574,7 +1573,7 @@ if(filteredLinks.length === 0) {
 const downloadLinks = filteredLinks.map((link, index) => {
             return `${index + 1} || ${link.quality} ( ${link.size} )` 
         }).join("\n")
-let infoMsg = `*_Movie sender_*
+let infoMsg = `*_WA BOT MOVIE SENDER_*
 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
@@ -1644,24 +1643,23 @@ const msgBody = {
          await sock.sendMessage(sendJid, msgBody)
 			}
 } else if(number < 1) {
-let sendInfomsg = `🍟 *${info.result.data.title}*
+let sendInfomsg = `📽 *_${info.result.data.title}_*
 
-🧿 *Release Date :* ${info.result.data.date}
+📅 *Release Date :* ${info.result.data.date}
 
 🌍 *Country :* ${info.result.data.country}
 
-⏱ *Duration :* ${info.result.data.runtime}
+⏱ *Runtime :* ${info.result.data.runtime}
 
-🎀 *Categories :* ${info.result.data.category}
+🧩 *Categories :* ${info.result.data.category}
 
-⭐ *IMDB Rate :* ${info.result.data.imdbRate}
+🎯 *IMDB Rate :* ${info.result.data.imdbRate}
 
 🤵‍♂ *Director* : ${info.result.data.director}
 
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
 
-● ɢʀᴏᴜᴘ ʟɪɴᴋ : https://chat.whatsapp.com/${code}
-
+> ɢʀᴏᴜᴘ ʟɪɴᴋ : https://chat.whatsapp.com/${code}
 > ɪɴꜰɪɴɪᴛʏ ᴍᴏᴠɪᴇ ᴡᴏʀʟᴅ`
 const fdChannel2 = {
             newsletterJid: "120363352976453510@newsletter",
