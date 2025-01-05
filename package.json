@@ -12,7 +12,7 @@
     "@dark-yasiya/yt-dl.js": "^1.0.5",
     "@google/generative-ai": "^0.21.0",
     "@hapi/boom": "^10.0.1",
-    "@whiskeysockets/baileys": "latest",
+    "@whiskeysockets/baileys": "^6.7.9",
     "axios": "^1.7.9",
     "express": "latest",
     "fs-extra": "^11.2.0",
