@@ -1657,9 +1657,8 @@ let sendInfomsg = `📽 *_${info.result.data.title}_*
 
 🤵‍♂ *Director* : ${info.result.data.director}
 
-∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
-
 > ɢʀᴏᴜᴘ ʟɪɴᴋ : https://chat.whatsapp.com/${code}
+
 > ɪɴꜰɪɴɪᴛʏ ᴍᴏᴠɪᴇ ᴡᴏʀʟᴅ`
 const fdChannel2 = {
             newsletterJid: "120363352976453510@newsletter",
