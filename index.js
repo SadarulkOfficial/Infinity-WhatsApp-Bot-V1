@@ -1035,8 +1035,6 @@ async function connectToWhatsApp() {
     auth: state,
     logger: pino({ level: "silent" }),
     maxFileSize: config.MAX_SIZE * 1024 * 1024,
-    browser: ['Wa bot', 'Chrome', '1.0.0'],
-    version: [2, 2323, 4]
   });
   sock.ev.on("connection.update", (update) => {
     const { connection, lastDisconnect } = update;
@@ -1052,24 +1050,6 @@ async function connectToWhatsApp() {
   sock.ev.on("creds.update", saveCreds);
   sock.ev.on("messages.upsert", async ({ messages }) => {
     const m = messages[0];
-
-async function handleButtonResponse(m, sock) {
-    if (m.message?.buttonsResponseMessage) {
-        const buttonId = m.message.buttonsResponseMessage.selectedButtonId
-        
-        switch(buttonId) {
-            case 'poll_yes':
-                await sock.sendMessage(jid, { text: 'Thanks for voting Yes! 🎉' })
-                break;
-            case 'poll_no':
-                await sock.sendMessage(jid, { text: 'Thanks for voting No! 🤔' })
-                break;
-        }
-    }
-          }
-    
-    await handleButtonResponse(m, sock)
-    
     if (!m.message) return;
     let messageContent = ''
     if (m.message.conversation) {
@@ -1373,21 +1353,6 @@ async function handleButtonResponse(m, sock) {
             });
           }
           break;
-        case "test":
-          
-          const buttons = [
-            {buttonId: 'poll_yes', buttonText: {displayText: 'Yes ✅'}, type: 1},
-            {buttonId: 'poll_no', buttonText: {displayText: 'No ❌'}, type: 1}
-        ]
-        const buttonMessage = {
-            text: "📊 Simple Poll\n\nDo you like this bot?",
-            footer: 'Click to vote',
-            buttons: buttons,
-            headerType: 1
-        }
-        await sock.sendMessage(jid, buttonMessage);
-          
-    break;
       }
     }
     }
