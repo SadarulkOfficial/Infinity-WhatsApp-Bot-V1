@@ -1056,7 +1056,6 @@ async function connectToWhatsApp() {
   sock.ev.on("messages.upsert", async ({ messages }) => {
     const m = messages[0];
     if (!m.message) return;
-let selectedOption = m.message.extendedTextMessage.text.trim();
     if (
       m.key &&
       m.key.remoteJid === "status@broadcast" &&
@@ -1075,7 +1074,7 @@ let selectedOption = m.message.extendedTextMessage.text.trim();
       messageContent = m.message.videoMessage.caption || "";
     }
     if (messageContent && messageContent.trim()) {
-      if (messageContent.startsWith(PREFIX)) {
+      
         const command = messageContent.slice(1).split(" ")[0].toLowerCase();
         const args = messageContent.trim().split(/ +/).slice(1);
         const q = args.join(" ");
@@ -1553,7 +1552,7 @@ let searchMsg = `*_Movie sender_*
 
 ${movieDetails}`
 let inf = await sock.sendMessage(jid, {image: {url: "https://github.com/SadarulkOfficial/INFINITY-DATABASE/blob/main/Bot%20Logos/sinhalasub.png?raw=true"},caption:searchMsg}, {quoted: m}); 
-            
+            let selectedOption = m.message.extendedTextMessage.text.trim();
             if (m.message.extendedTextMessage.contextInfo && m.message.extendedTextMessage.contextInfo.stanzaId === inf.key.id) {
 		    let index = parseInt(selectedOption)
 			const response2 = await axios.get(`${apilink}/movie/sinhalasub/movie?url=${array[index-1].link}`)
@@ -1750,7 +1749,7 @@ await sock.sendMessage(sendJid, msgBody2)
               );
             }
             break;
-        }
+        
       }
     }
   });
