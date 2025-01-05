@@ -1354,7 +1354,7 @@ async function connectToWhatsApp() {
           }
           break;
         case "test":
-          const buttonId = m.message.buttonsResponseMessage.selectedButtonId
+          
           const buttons = [
             {buttonId: 'poll_yes', buttonText: {displayText: 'Yes ✅'}, type: 1},
             {buttonId: 'poll_no', buttonText: {displayText: 'No ❌'}, type: 1}
@@ -1366,7 +1366,11 @@ async function connectToWhatsApp() {
             headerType: 1
         }
         await sock.sendMessage(jid, buttonMessage);
-          switch(buttonId) {
+          async function handleButtonResponse(m, sock) {
+    if (m.message?.buttonsResponseMessage) {
+        const buttonId = m.message.buttonsResponseMessage.selectedButtonId
+        
+        switch(buttonId) {
             case 'poll_yes':
                 await sock.sendMessage(jid, { text: 'Thanks for voting Yes! 🎉' })
                 break;
@@ -1374,6 +1378,8 @@ async function connectToWhatsApp() {
                 await sock.sendMessage(jid, { text: 'Thanks for voting No! 🤔' })
                 break;
         }
+    }
+          }
     break;
       }
     }
