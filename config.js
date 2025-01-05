@@ -1,9 +1,9 @@
 module.exports = {
-  SESSION_ID: "2q4nhYiD#sGcIfqoLB0HGQoObBAn_5_NVSFa1BpCsLoCShusgQWQ",
-  BOT_NUMBER: "94771709545",
+  SESSION_ID: "Enter your session id",
+  BOT_NUMBER: "Enter your bot number",
   PREFIX: ".",
-  GOOGLE_API_KEY: "AIzaSyDpCGEwnXmyVURfMCKSA245bNsS2NFewB8",
-  MAX_SIZE: "3000", // 100MB
+  GOOGLE_API_KEY: "Enter your google api key",
+  MAX_SIZE: "100", // 100MB
   AUTO_STATUS_READ: "on", // on or off
-  MV_SEND_JID: "120363355439809658@g.us",
+  MV_SEND_JID: "Enter your default movie send jid",
 };
