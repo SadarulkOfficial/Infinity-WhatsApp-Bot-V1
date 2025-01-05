@@ -1051,22 +1051,6 @@ async function connectToWhatsApp() {
   sock.ev.on("messages.upsert", async ({ messages }) => {
     const m = messages[0];
     if (!m.message) return;
-    
-    async function handleButtonResponse(m, sock) {
-    if (m.message?.buttonsResponseMessage) {
-        const buttonId = m.message.buttonsResponseMessage.selectedButtonId
-        
-        switch(buttonId) {
-            case 'poll_yes':
-                await sock.sendMessage(jid, { text: 'Thanks for voting Yes! 🎉' })
-                break
-            case 'poll_no':
-                await sock.sendMessage(jid, { text: 'Thanks for voting No! 🤔' })
-                break
-        }
-    }
-    }
-    
     let messageContent = ''
     if (m.message.conversation) {
         messageContent = m.message.conversation
@@ -1370,11 +1354,11 @@ async function connectToWhatsApp() {
           }
           break;
         case "test":
+          const buttonId = m.message.buttonsResponseMessage.selectedButtonId
           const buttons = [
             {buttonId: 'poll_yes', buttonText: {displayText: 'Yes ✅'}, type: 1},
             {buttonId: 'poll_no', buttonText: {displayText: 'No ❌'}, type: 1}
         ]
-
         const buttonMessage = {
             text: "📊 Simple Poll\n\nDo you like this bot?",
             footer: 'Click to vote',
@@ -1382,6 +1366,14 @@ async function connectToWhatsApp() {
             headerType: 1
         }
         await sock.sendMessage(jid, buttonMessage);
+          switch(buttonId) {
+            case 'poll_yes':
+                await sock.sendMessage(jid, { text: 'Thanks for voting Yes! 🎉' })
+                break;
+            case 'poll_no':
+                await sock.sendMessage(jid, { text: 'Thanks for voting No! 🤔' })
+                break;
+        }
     break;
       }
     }
