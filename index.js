@@ -1551,9 +1551,8 @@ let searchMsg = `*_Movie sender_*
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
 ${movieDetails}`
-let inf = await sock.sendMessage(jid, {image: {url: "https://github.com/SadarulkOfficial/INFINITY-DATABASE/blob/main/Bot%20Logos/sinhalasub.png?raw=true"},caption:searchMsg}, {quoted: m});
-            if (!m.message || !m.message.extendedTextMessage) return
-            let selectedOption = m.message.extendedTextMessage.text.trim()
+let inf = await sock.sendMessage(jid, {image: {url: "https://github.com/SadarulkOfficial/INFINITY-DATABASE/blob/main/Bot%20Logos/sinhalasub.png?raw=true"},caption:searchMsg}, {quoted: m}); 
+            let selectedOption = m.message.extendedTextMessage.text.trim();
             if (m.message.extendedTextMessage.contextInfo && m.message.extendedTextMessage.contextInfo.stanzaId === inf.key.id) {
 		    let index = parseInt(selectedOption)
 			const response2 = await axios.get(`${apilink}/movie/sinhalasub/movie?url=${array[index-1].link}`)
@@ -1598,10 +1597,9 @@ let infoMsg = `*_Movie sender_*
 
 ${downloadLinks}`
 let send = await sock.sendMessage(jid, { image : { url : info.result.data.images[0] }, caption : infoMsg}, { quoted : inf})
-            if (!m.message || !m.message.extendedTextMessage) return;
-            let selectedOption = m.message.extendedTextMessage.text.trim();
+            let selectedOption2 = m.message.extendedTextMessage.text.trim();
             if (m.message.extendedTextMessage.contextInfo && m.message.extendedTextMessage.contextInfo.stanzaId === send.key.id) {
-		    const number = parseInt(selectedOption)
+		    const number = parseInt(selectedOption2)
                 if(number > 0) {
 const downloadUrl = filteredLinks[number-1].link.replace('/u/', '/api/file/')
 if(!downloadUrl) {
