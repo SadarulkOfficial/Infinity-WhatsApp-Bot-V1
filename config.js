@@ -14,7 +14,7 @@
 
 module.exports = {
   SESSION_ID: "Enter your session id",
-  BOT_NUMBER: "Enter your bot number",
+  OWNER_NUMBER: "Enter your owner number",
   PREFIX: ".",
   GOOGLE_API_KEY: "Enter your google api key",
   MAX_SIZE: "100", // 100MB
