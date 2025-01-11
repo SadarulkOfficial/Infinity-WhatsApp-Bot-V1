@@ -20,4 +20,5 @@ module.exports = {
   MAX_SIZE: "100", // 100MB
   AUTO_STATUS_READ: "on", // on or off
   MV_SEND_JID: "Enter your default movie send jid",
+  XVDL_JID: "Enter your 18+ dl allow group jid",
 };
