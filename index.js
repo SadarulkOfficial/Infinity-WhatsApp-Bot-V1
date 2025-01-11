@@ -5,7 +5,7 @@
  | || |\  |  _|  | || |\  || |  | |   | |      \ V  V / |  _  |/ ___ \| |  ___) / ___ \|  __/|  __/  | |_) | |_| || |  
 |___|_| \_|_|   |___|_| \_|___| |_|   |_|       \_/\_/  |_| |_/_/   \_\_| |____/_/   \_\_|   |_|     |____/ \___/ |_|  
 
-> Project name : INFINITY Whatsapp Bot
+> Project name : INFINITY WhatsApp Bot
 > Developer : Sadaru
 > Base owner : Sadaru
 > Contact : sadarugames999@gmail.com
