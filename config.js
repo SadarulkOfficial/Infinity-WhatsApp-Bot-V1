@@ -14,12 +14,12 @@
 */
 
 module.exports = {
-  SESSION_ID: "Enter your session id",
-  OWNER_NUMBER: "Enter your owner number",
+  SESSION_ID: "", // Enter your session id
+  OWNER_NUMBER: "", // Enter your owner number (Ex :- 947018xxxxx)
   PREFIX: ".",
-  GOOGLE_API_KEY: "Enter your google api key",
+  GOOGLE_API_KEY: "", // Enter your google api key
   MAX_SIZE: "100", // 100MB
   AUTO_STATUS_READ: "on", // on or off
-  MV_SEND_JID: "Enter your default movie send jid",
-  XVDL_JID: "Enter your 18+ dl allow group jid",
+  MV_SEND_JID: "", // Enter your default movie send jid
+  XVDL_JID: "", // Enter your 18+ dl allow group jid
 };
