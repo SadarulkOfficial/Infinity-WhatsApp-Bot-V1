@@ -3,7 +3,7 @@
 </p>
 <p align="center">
 </a>
-<a href="https://github.com/SadarulkOfficial/Infinity-WhatsApp-Bot-V1">
+<a href="https://github.com/SadarulkOfficial/Infinity-WhatsApp-Bot-V1/fork">
 <img src="https://img.shields.io/github/forks/SadarulkOfficial/Infinity-WhatsApp-Bot-V1?label=Fork&style=social">
 </a>
 <a href="https://github.com/SadarulkOfficial/Infinity-WhatsApp-Bot-V1">
