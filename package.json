@@ -1,12 +1,12 @@
 {
-  "name": "whatsapp-bot",
+  "name": "Infinity-whatsapp-bot",
   "version": "1.0",
   "description": "A simple WhatsApp bot created by Sadaru",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name whatsapp-bot",
-    "stop": "pm2 stop whatsapp-bot",
-    "restart": "pm2 restart whatsapp-bot"
+    "start": "pm2 start index.js --deep-monitoring --attach --name infinity",
+    "stop": "pm2 stop infinity",
+    "restart": "pm2 restart infinity"
   },
   "dependencies": {
     "@dark-yasiya/yt-dl.js": "^1.0.5",
