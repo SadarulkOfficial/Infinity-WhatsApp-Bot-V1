@@ -8,7 +8,7 @@
 </a>
 <a href="https://github.com/SadarulkOfficial/Infinity-WhatsApp-Bot-V1">
 <img src="https://img.shields.io/github/stars/SadarulkOfficial/Infinity-WhatsApp-Bot-V1?style=social">
-</a>a>
+</a>
 </p>
 <p align="center">
 <img src="https://img.shields.io/github/repo-size/SadarulkOfficial/Infinity-WhatsApp-Bot-V1?color=blue&label=Repo%20Size&style=plastic">
