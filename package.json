@@ -1,6 +1,6 @@
 {
   "name": "Infinity-whatsapp-bot",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "A simple WhatsApp bot created by Sadaru",
   "main": "index.js",
   "scripts": {
