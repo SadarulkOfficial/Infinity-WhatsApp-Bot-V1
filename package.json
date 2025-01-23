@@ -14,7 +14,7 @@
     "@hapi/boom": "^10.0.1",
     "@mrnima/facebook-downloader": "^1.0.0",
     "@mrnima/tiktok-downloader": "^1.0.0",
-    "@whiskeysockets/baileys": "^6.7.9",
+    "@whiskeysockets/baileys": "git+https://github.com/rdpmjsing/Baileys-btn.git",
     "axios": "^1.7.9",
     "express": "latest",
     "fs-extra": "^11.2.0",
