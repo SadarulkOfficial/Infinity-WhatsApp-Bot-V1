@@ -16,12 +16,14 @@
 module.exports = {
   SESSION_ID: "", // Enter your session id
   OWNER_NUMBER: "", // Enter your owner number (Ex :- 947018xxxxx)
-  PREFIX: ".",
+  PREFIX: ".", // Enter your prefix
   GOOGLE_API_KEY: "", // Enter your google api key
   MAX_SIZE: "100", // 100MB
-  AUTO_STATUS_READ: "on", // on or off
+  AUTO_READ_STATUS: "on", // on or off
+  AUTO_REACT_STATUS: "on", // on or off
+  STATUS_REACT: "👻", // Enter any emoji
   MV_SEND_JID: "", // Enter your default movie send jid
-  XVDL_JID: "", // Enter your 18+ dl allow group jid
-  AUTO_AI: "", // on or off
-  AUTO_AI_JID: "", // Enter your auto AI allow group jid
+  XVDL_JID: "", // Enter your 18+ dl allow jid
+  AUTO_AI: "on", // on or off
+  AUTO_AI_JID: "", // Enter your auto AI allow jid
 };
