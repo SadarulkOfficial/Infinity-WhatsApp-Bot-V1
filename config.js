@@ -21,7 +21,7 @@ module.exports = {
   MAX_SIZE: "100", // 100MB
   AUTO_READ_STATUS: "on", // on or off
   AUTO_REACT_STATUS: "on", // on or off
-  STATUS_REACT: "👻", // Enter any emoji
+  STATUS_REACT: "❤️", // Enter any emoji
   MV_SEND_JID: "", // Enter your default movie send jid
   XVDL_JID: "", // Enter your 18+ dl allow jid
   AUTO_AI: "on", // on or off
